@@ -1,0 +1,9 @@
+-- Find the average scores by length of stay for international students, and view them in descending order
+SELECT stay, 
+       ROUND(AVG(todep), 2) AS average_phq, 
+       ROUND(AVG(tosc), 2) AS average_scs, 
+       ROUND(AVG(toas), 2) AS average_as
+FROM students
+WHERE inter_dom = 'Inter'
+GROUP BY stay
+ORDER BY stay DESC;
